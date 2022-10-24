@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of posts | filter:searchKey:'itemName'" >
+            <div class="card col-md-3">
+            <img src="../assets/foodimg4.jpg" alt="">
+            <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">Item id:{{item.itemId}}&nbsp;&nbsp;{{item.itemName}}</h5>
+            <p><strong>Category:</strong> {{item.category}}</p>
+            <P><strong>Price: </strong>Rs {{item.price}} /- </P>
+            <P><strong>Item Vendor: </strong> {{item.itemVendor}}  </P>
+            <button class="btn btn-primary">Buy Now</button>
+        </div>
+    </ng-container>
+        
+    </div>
+</div>

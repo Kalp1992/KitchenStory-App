@@ -1,0 +1,19 @@
+<header>
+    <div class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 40px;" class="fas fa-shipping-fast">
+            </i>&nbsp;
+            <strong style="font-size: 30px">Welcome to KitchenStory</strong>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search food items">
+            </div>
+            <span class="fas fa-search search-icon"></span>
+    
+        </div>
+        
+    </div>
+    
+    </header>
+    <app-food-item></app-food-item>
+    
+    

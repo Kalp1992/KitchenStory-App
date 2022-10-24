@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                    <h4>Please enter adminname and password!!</h4>
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div class="mb-3">
+                      <label for="exampleInputAdminname" class="form-label">Adminname</label>
+                      <input formControlName="Adminname" type="text" class="form-control" id="exampleInputAdminname" >
+                      
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input  formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                  </form>
+                  <a routerLink="/Adminsignup">New Admin? click to sign up !!</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+

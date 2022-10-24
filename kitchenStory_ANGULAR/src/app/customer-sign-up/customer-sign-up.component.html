@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Sign Up</h1>
+                    <h4>Please register yourself!!</h4>
+                </div>
+                <form [formGroup]="signupForm" (ngSubmit) ="signUp()">
+                    <div class="mb-3">
+                        <label for="exampleInputCustomerid" class="form-label">Customer id</label>
+                        <input  formControlName="customerId" type="number" class="form-control" id="exampleInputCustomerid" >
+                        
+                      </div>
+                    <div class="mb-3">
+                        <label for="exampleInputname" class="form-label">Full Name</label>
+                        <input formControlName="name"  type="text" class="form-control" id="exampleInputname" >
+                        
+                      </div>
+                    
+                    <div class="mb-3">
+                      <label for="exampleInputCustomername" class="form-label">Customername</label>
+                      <input formControlName="customername"  type="text" class="form-control" id="exampleInputCustomername" >
+                      
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input formControlName="password"  type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                  </form>
+                  <a routerLink="/Userlogin">Already registered? click to login !!</a>
+            </div>
+        </div>
+    </div>
+
+</div>

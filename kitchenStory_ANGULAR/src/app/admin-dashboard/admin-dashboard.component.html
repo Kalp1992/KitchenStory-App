@@ -1,0 +1,91 @@
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+    <h1 style="color: aliceblue;">Welcome Admin </h1>
+    <div class="d-flex">
+        <button (click)="clickAddFood()"type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">
+     Add Food Item
+        </button>
+    </div>
+    </div>
+    </nav>
+    <table class="table table-striped mt-3">
+        <thead>
+        <tr>
+        <th>ITEM_ID</th>
+        <th>ITEM_NAME</th>
+        <th>CATEGORY</th>
+        <th>PRICE</th>  
+        <th>ITEM VENDOR</th>
+        <th>MANAGE FOOD ITEM</th>
+        
+        
+        </tr>
+        
+        </thead>
+        
+        <tbody>
+        <tr *ngFor="let post of posts" > 
+        <td>{{post.itemId}}</td>
+        <td>{{post.itemName}}</td>
+        <td>{{post.category}}</td> 
+        <td>{{post.price}}</td>
+        <td>{{post.itemVendor}}</td>
+        <td>
+            <button (click)="deleteFoodItem(post)" class="btn btn-danger mx-3">Delete</button>
+        </td>
+        
+        
+        
+        </tr>
+        
+        </tbody>
+        
+        </table>
+    
+    
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Food Item Detail</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                      <label for="exampleInputItemId" class="form-label">Item Id</label>
+                      <input formControlName="itemId" type="number" class="form-control" id="exampleInputItemId" >
+                      
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputName" class="form-label">Item Name</label>
+                      <input formControlName="itemName"  type="text" class="form-control" id="exampleInputName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputCategory" class="form-label">Category</label>
+                        <input formControlName="category"  type="text" class="form-control" id="exampleInputCategory">
+                      </div>
+                      
+                      <div class="mb-3">
+                        <label for="exampleInputPrice" class="form-label">Price</label>
+                        <input formControlName="price"  type="text" class="form-control" id="exampleInputPrice">
+                      </div>
+                      
+                      <div class="mb-3">
+                        <label for="exampleInputTotal" class="form-label">Item Vendor</label>
+                        <input formControlName="total" type="text" class="form-control" id="exampleInputTotal">
+                      </div>
+                    
+                   
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button id="cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button *ngIf="showAdd" type="button" (click)="postFoodDetail()"class="btn btn-primary">Add</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
